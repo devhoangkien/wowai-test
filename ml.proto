@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+service MLService {
+  rpc GetProcessingStatus(Token) returns (ProcessingStatus);
+  rpc UploadRawData(RawDataRequest) returns (UploadResponse);
+}
+
+
+message RawDataRequest {
+  string file = 1;
+  repeated string base64Files = 2;
+}
+
+message UploadResponse {
+  string message = 1; 
+}
+
+message Token {
+  string value  = 1;
+}
+
+message ProcessingStatus {
+  string status = 1;
+}

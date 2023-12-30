@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  ml-express-server:
+    build: 
+      context: .
+      target: build
+    ports:
+      - "3000:3000"
+      - "50051:50051"
